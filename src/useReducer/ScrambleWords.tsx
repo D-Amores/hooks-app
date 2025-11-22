@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { SkipForward, Play } from 'lucide-react';
+import confetti from 'canvas-confetti';
 
 const GAME_WORDS = [
   'REACT',
@@ -57,10 +58,31 @@ export const ScrambleWords = () => {
   const [isGameOver, setIsGameOver] = useState(false);
 
   const handleGuessSubmit = (e: React.FormEvent) => {
-    // Previene el refresh de la página
+
     e.preventDefault();
-    // Implementar lógica de juego
-    console.log('Intento de adivinanza:', guess, currentWord);
+
+    if ( guess === currentWord){
+      const newWords = words.slice(1);
+
+      confetti({
+        particleCount: 100,
+        spread: 120,
+        origin: { y: 0.6 },
+      })
+
+      setPoints(points + 1);
+      setGuess('');
+      setWords(newWords);
+      setCurrentWord(newWords[0]);
+      setScrambledWord(scrambleWord(newWords[0]));
+      return;
+    }
+
+    setErrorCounter( errorCounter + 1);
+    setGuess('');
+    if( errorCounter + 1 >= maxAllowErrors){
+      setIsGameOver(true);
+    }
 
   };
 
