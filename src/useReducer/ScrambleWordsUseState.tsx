@@ -94,7 +94,7 @@ export const ScrambleWords = () => {
     setSkipCounter( skipCounter + 1);
     setWords( updatedWords );
     setCurrentWord( updatedWords[0]);
-    setScrambledWord( scrambledWord(updatedWords[0]))
+    setScrambledWord( scrambleWord(updatedWords[0]) );
     setGuess('');
   };
 
