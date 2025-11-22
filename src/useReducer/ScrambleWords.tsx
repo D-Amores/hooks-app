@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { SkipForward, Play } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { skip } from 'node:test';
 
 const GAME_WORDS = [
   'REACT',
@@ -87,9 +88,15 @@ export const ScrambleWords = () => {
   };
 
   const handleSkip = () => {
-    console.log('Palabra saltada');
+    if (skipCounter >= maxSkips) return;
 
-    
+    const updatedWords = words.slice(1);
+
+    setSkipCounter( skipCounter + 1);
+    setWords( updatedWords );
+    setCurrentWord( updatedWords[0]);
+    setScrambledWord( scrambledWord(updatedWords[0]))
+    setGuess('');
   };
 
   const handlePlayAgain = () => {
