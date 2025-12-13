@@ -15,11 +15,16 @@ const MemoHook = () => {
 
       <MySubTitle subtitle={subTitle} />
 
-      <button className='bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer'>
+      <button className='bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer'
+        onClick={() => setTitle('Hello ' + new Date().getTime())}
+      >
         Cambiar Titulo
       </button>
 
-      <button className='bg-green-500 text-white px-4 py-2 rounded-md cursor-pointer'>
+      <button className='bg-green-500 text-white px-4 py-2 rounded-md cursor-pointer'
+        // onClick={() => setSubTitle('World ' + new Date().getTime())}
+        onClick={() => setSubTitle('World')}
+      >
         Cambiar Subtitulo
       </button>
     </div>
