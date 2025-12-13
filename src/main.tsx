@@ -7,10 +7,11 @@ import { createRoot } from 'react-dom/client'
 // import { TrafficLightWithHook } from './useEffect/TrafficLightWithHook'
 // import { PokemonPage } from './examples/PokemonPage'
 // import FocusScreen from './useRef/FocusScreen'
-import { TasksApp } from './useReducer/TaskApp'
+// import { TasksApp } from './useReducer/TaskApp'
+// import { ScrambleWords } from './useReducer/ScrambleWords'
 
 import './index.css'
-import { ScrambleWords } from './useReducer/ScrambleWords'
+import MemoHook from './memos/MemoHook'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')!).render(
     {/* <PokemonPage /> */}
     {/* <FocusScreen /> */}
     {/* <TasksApp /> */}
-    <ScrambleWords />
+    {/* <ScrambleWords /> */}
+    <MemoHook />
   </StrictMode>,
 )
