@@ -1,9 +1,18 @@
-import React from 'react'
+import { Button } from "@/components/ui/button"
 
 const ProfilePage = () => {
   return (
-    <div>
-      <h1>Desde ProfilePage</h1>
+    <div className='flex flex-col items-center justify-center min-h-screen'>
+      <h1 className='text-4xl font-bold'>Perfil del Usuario</h1>
+      <hr />
+
+      <pre className='my-4'>{JSON.stringify({}, null, 2)}</pre>
+
+      <Button
+        variant="destructive"
+      >
+        Salir
+      </Button>
     </div>
   )
 }
