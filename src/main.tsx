@@ -13,10 +13,11 @@ import { Toaster } from 'sonner';
 // import MemoHook from './memos/MemoHook'
 // import MemoCounter from './memos/MemoCounter'
 // import { InstagromApp } from './useOptimistic/instagromApp'
+// import ClientInformation from './use-suspense/ClientInformation';
+// import { getUserAction } from './use-suspense/api/get-user.action';
 
 import './index.css'
-import ClientInformation from './use-suspense/ClientInformation';
-import { getUserAction } from './use-suspense/api/get-user.action';
+import ProfessionalApp from './useContext/ProfessionalApp';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -32,8 +33,9 @@ createRoot(document.getElementById('root')!).render(
     {/* <MemoHook /> */}
     {/* <MemoCounter /> */}
     {/* <InstagromApp /> */}
-    <Suspense fallback={<div>Loading client information...</div>}>
+    {/* <Suspense fallback={<div>Loading client information...</div>}>
       <ClientInformation getUser={getUserAction(1000)}/>
-    </Suspense>
+    </Suspense> */}
+    <ProfessionalApp />
   </StrictMode>,
 )
