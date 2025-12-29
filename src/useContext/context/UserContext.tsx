@@ -7,6 +7,7 @@ interface UserContextProps {
   // state
   authStatus: AuthStatus;
   user: User | null;
+  isAuthenticated: boolean;
 
   //methods
   login: (userId: number) => boolean;
@@ -54,6 +55,7 @@ const UserContextProvider = ({ children }: PropsWithChildren) => {
     <UserContext value={{ 
         authStatus: authStatus, 
         user: user,
+        isAuthenticated: authStatus === 'authenticated',
         login: handleLogin,
         logout: handleLogout
       }}> {children}
